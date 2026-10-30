@@ -2,10 +2,8 @@
 
 ## Dokumentasi API
 Untuk mengetahui endpoint yang tersedia beserta contoh request, skema body, dan response-nya, jalankan aplikasi lalu buka dokumentasi interaktif Swagger UI di browser pada alamat:
-
-```text
 https://test.fachriakbar.me/api/docs
-```
+
 
 ## Deskripsi Folder dan file
 
@@ -46,7 +44,15 @@ restapi-widya/
 ## Menjalankan App di Local
 
 ### Dependensi
-gunakan perintah berikut di terminal Anda untuk menginstall semua dependensi yang diperlukan oleh proyek ini:
+sebelum install dependensi, pastikan node dan npm terinstall di device, verifikasi:
+```bash
+node -v
+```
+```bash
+npm -v
+```
+
+jika node dan npm ada, gunakan perintah berikut di terminal Anda untuk menginstall semua dependensi yang diperlukan oleh proyek ini:
 
 ```bash
 npm install
@@ -59,7 +65,7 @@ salin file contoh konfigurasi lingkungan `.env.example` menjadi `.env`, value ko
 cp .env.example .env
 ```
 
-untuk running database container, cukup jalankan:
+untuk running database container pastikan di device terinstall **docker**, cukup jalankan:
 ``` bash
 docker compose up -d
 ```
@@ -68,6 +74,8 @@ verifikasi container:
 ``` bash
 docker compose ps
 ```
+
+atau, gunakan url yang sudah kamu siapkan sebelumnya, dan ganti value DB_URL pada file `.env`
 
 ### Inisialisasi Database (Prisma 8)
 Setelah langkah-langkah diatas dilakukan, jalankan rangkaian perintah berikut secara berurutan untuk menyiapkan database:
