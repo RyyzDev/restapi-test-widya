@@ -1,5 +1,9 @@
 # Rest API Test Software Engineer Intern
 
+## Endpoint Live Utama
+project ini sudah di deploy, menggunakan VM dari Microsoft Azure dengan URL:
+https://test.fachriakbar.me/
+
 ## Dokumentasi API
 Untuk mengetahui endpoint yang tersedia beserta contoh request, skema body, dan response-nya, jalankan aplikasi lalu buka dokumentasi interaktif Swagger UI di browser pada alamat:
 https://test.fachriakbar.me/api/docs
