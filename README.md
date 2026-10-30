@@ -59,7 +59,7 @@ cd restapi-test-widya
 ```
 
 ### Dependensi
-sebelum install dependensi, pastikan node dan npm terinstall di device, verifikasi:
+sebelum install dependensi, pastikan node versi >=20 dan npm versi >=12 terinstall di device, verifikasi:
 ```bash
 node -v
 ```
