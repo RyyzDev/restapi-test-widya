@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db_restapi:
+    image: postgres:17-alpine
+    container_name: db_restapi
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rahasia
+      POSTGRES_DB: restapi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_widya:/var/lib/postgresql/data
+
+volumes:
+  pgdata_widya:
+    driver: local
