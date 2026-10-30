@@ -1,0 +1,11 @@
+// use prisma-8
+
+//model Table User
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  email     String   @unique
+  gender    String
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.UpdatedAtString
+}

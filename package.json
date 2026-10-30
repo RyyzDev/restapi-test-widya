@@ -1,0 +1,37 @@
+{
+  "name": "restapi-widya",
+  "version": "1.0.0",
+  "description": "ini adalah project untuk memenuhi test rest api pada posisi software engineer intern di widya robotics",
+  "homepage": "https://github.com/RyyzDev/restapi-test-widya#readme",
+  "bugs": {
+    "url": "https://github.com/RyyzDev/restapi-test-widya/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyyzDev/restapi-test-widya.git"
+  },
+  "author": "RyyzDev",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "contract:emit": "prisma contract emit",
+    "postinstall": "prisma skills sync || exit 0"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.10.1",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@prisma/cli-engine": "^0.9.0",
+    "@prisma/orm-postgres": "^8.0.0-rc.21",
+    "@types/node": "^26.6.6",
+    "nodemon": "^3.1.14",
+    "prisma": "^8.0.0-rc.28"
+  }
+}
