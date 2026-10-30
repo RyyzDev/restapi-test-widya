@@ -64,6 +64,15 @@ const swaggerSpec = {
                     tags: ['User'],
                     summary: 'Ambil data profil user yang sedang login',
                     security: [{ bearerAuth: [] }],
+                    parameters: [
+                         {
+                              in: 'header',
+                              name: 'Authorization',
+                              required: true,
+                              schema: { type: 'string' },
+                              description: 'Masukkan token JWT (format: Bearer <token> atau langsung <token>)'
+                         }
+                    ],
                     responses: {
                          200: { description: 'Berhasil mengambil profil' },
                          401: { description: 'Token tidak ditemukan' },
@@ -88,7 +97,19 @@ export const swaggerDocs = (req, res) => {
           <body>
                <div id="swagger-ui"></div>
                <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
-               <script>window.onload = () => SwaggerUIBundle({ spec: ${JSON.stringify(swaggerSpec)}, dom_id: '#swagger-ui' });</script>
+               <script>
+                    window.onload = () => SwaggerUIBundle({
+                         spec: ${JSON.stringify(swaggerSpec)},
+                         dom_id: '#swagger-ui',
+                         requestInterceptor: (req) => {
+                              const val = document.querySelector('tr[data-param-name="Authorization"] input')?.value?.trim();
+                              if (val && !req.headers.Authorization) {
+                                   req.headers.Authorization = val.startsWith('Bearer ') ? val : 'Bearer ' + val;
+                              }
+                              return req;
+                         }
+                    });
+               </script>
           </body>
      </html>`
      );
