@@ -1,6 +1,49 @@
 # Rest API Test Software Engineer Intern
 
-## Instalasi
+## Dokumentasi API
+Untuk mengetahui endpoint yang tersedia beserta contoh request, skema body, dan response-nya, jalankan aplikasi lalu buka dokumentasi interaktif Swagger UI di browser pada alamat:
+
+```text
+https://test.fachriakbar.me/api/docs
+```
+
+## Deskripsi Folder dan file
+
+```text
+restapi-widya/
+├── migrations/                              # Riwayat migrasi dan snapshot skema database (Prisma 8)
+├── src/
+│   ├── controllers/
+│   │   ├── authController.js                # Logika bisnis autentikasi
+│   │   └── userController.js                # Logika bisnis profil pengguna
+│   ├── docs/
+│   │   └── api-docs.js                      # Konfigurasi spesifikasi OpenAPI/Swagger
+│   ├── middlewares/
+│   │   ├── validation/
+│   │   │   ├── schema/
+│   │   │   │   └── password.js              # Skema validasi aturan kompleksitas password
+│   │   │   ├── loginValidation.js           # Skema validasi request body login
+│   │   │   └── registerValidation.js        # Skema validasi request body register
+│   │   ├── auth.js                          # Middleware verifikasi token JWT Bearer
+│   │   └── validator.js                     # Helper middleware untuk mengeksekusi skema Zod
+│   ├── prisma/
+│   │   ├── contract.prisma                  # Definisi model/skema tabel database
+│   │   ├── contract.json                    # Hasil kompilasi kontrak skema
+│   │   ├── contract.d.ts                    # Definisi tipe TypeScript kontrak (auto-generated)
+│   │   └── db.js                            # Inisialisasi koneksi client database Prisma Postgres
+│   ├── routes/
+│   │   ├── authRoutes.js                    # Definisi endpoint autentikasi
+│   │   └── userRoutes.js                    # Definisi endpoint pengguna
+│   └── index.js                             # Entry point utama aplikasi
+├── .env.example                             # Template variabel environment
+├── docker-compose.yml                       # Konfigurasi container database PostgreSQL 17
+├── package.json                             # Daftar dependensi dan script npm
+├── prisma.config.ts                         # Konfigurasi CLI Prisma 8
+└── tsconfig.json                            # Konfigurasi TypeScript untuk Prisma & type-checking
+```
+
+
+## Menjalankan App di Local
 
 ### Dependensi
 gunakan perintah berikut di terminal Anda untuk menginstall semua dependensi yang diperlukan oleh proyek ini:

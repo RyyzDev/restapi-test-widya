@@ -3,9 +3,10 @@
 //model Table User
 model User {
   id        Int      @id @default(autoincrement())
-  name      String?
+  name      String
   email     String   @unique
   gender    String
+  password  String
   createdAt TimestamptzString @default(now())
   updatedAt temporal.UpdatedAtString
 }
