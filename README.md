@@ -43,6 +43,17 @@ restapi-widya/
 
 ## Menjalankan App di Local
 
+### Cloning Repository
+lakukan cloning repository ke local device menggunakan:
+```bash
+git clone https://github.com/RyyzDev/restapi-test-widya
+```
+
+lalu masuk ke folder:
+```bash
+cd restapi-test-widya
+```
+
 ### Dependensi
 sebelum install dependensi, pastikan node dan npm terinstall di device, verifikasi:
 ```bash
